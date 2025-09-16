@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cement Clinker Phase Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Cement Clinker Phase Prediction</h2>
+    <p>Model expects {{ features|length }} features:</p>
+    <ul>
+        {% for f in features %}
+            <li>{{ f }}</li>
+        {% endfor %}
+    </ul>
+
+    <form id="predictionForm">
+        <label>Enter Features (comma separated):</label>
+        <input type="text" id="features" placeholder="val1,val2,val3,..." required>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="result"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
